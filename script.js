@@ -137,6 +137,45 @@ document.getElementById('addBeritaAcaraDialog').addEventListener('click', functi
     }
 });
 
+// Edit berita
+function openEditBeritaDialog(id, noBerita, namaBerita, fromUnit, toUnit, keterangan, tanggal, file) {
+    document.getElementById('editId').value = id;
+    document.getElementById('editNoBerita').value = noBerita;
+    document.getElementById('editNamaBerita').value = namaBerita;
+    document.getElementById('editFromUnit').value = fromUnit;
+    document.getElementById('editToUnit').value = toUnit;
+    document.getElementById('editKeterangan').value = keterangan;
+
+    // Set file if applicable (optional: display file name or link)
+    if (file) {
+        const fileInput = document.getElementById('editFile');
+        fileInput.setAttribute('data-existing-file', file); // Store file metadata if needed
+    }
+
+    // Show the dialog
+    document.getElementById('editBeritaDialog').style.display = 'flex';
+}
+
+function closeEditBeritaDialog() {
+    document.getElementById('editBeritaDialog').style.display = 'none';
+}
+
+// delete berita dialog
+function openDeleteBeritaDialog() {
+    document.getElementById('deleteBeritaDialog').style.display = 'flex'; // Tampilkan dialog
+}
+
+function closeDeleteBeritaDialog() {
+    document.getElementById('deleteBeritaDialog').style.display = 'none'; // Sembunyikan dialog
+}
+
+function confirmDeleteBerita() {
+    // Tambahkan logika penghapusan data di sini
+    alert("Data berhasil dihapus!");
+    closeDeleteBeritaDialog(); // Tutup dialog setelah menghapus
+}
+
+
 // LISTBARANG
 function showAddListDialog() {
     document.getElementById('addListBarang').style.display = 'flex';
